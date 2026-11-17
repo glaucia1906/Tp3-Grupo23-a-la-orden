@@ -4,6 +4,7 @@ export function initFlows() {
   document.querySelectorAll('.solution').forEach(section => {
     const rule = section.id === 'solucion-r3' ? 'r3' : 'r4';
     const panel = section.querySelector('.flow-panel');
+    const completeDiagram = panel.innerHTML;
     let scenario = rule === 'r3' ? 'one' : 'many';
     let selected = '';
     let position = 0;
@@ -17,7 +18,8 @@ export function initFlows() {
       <div class="step-information" role="status" aria-live="polite" aria-atomic="true"></div>
       <div class="order-choice" hidden></div>
       <div class="flow-controls"><button type="button" data-action="back" aria-label="Paso anterior de ${rule.toUpperCase()}">← Anterior</button><span class="step-counter"></span><button type="button" data-action="next" aria-label="Paso siguiente de ${rule.toUpperCase()}">Siguiente →</button></div>
-      <button type="button" class="reset-flow">↺ Reiniciar recorrido</button>`;
+      <button type="button" class="reset-flow">↺ Reiniciar recorrido</button>
+      <details class="complete-diagram"><summary>Ver diagrama completo · ${rule.toUpperCase()}</summary><div class="complete-diagram-content" role="region" aria-label="Diagrama completo de ${rule.toUpperCase()}">${completeDiagram}</div></details>`;
     const list = panel.querySelector('.live-flow');
     const choice = panel.querySelector('.order-choice');
 

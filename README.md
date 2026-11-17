@@ -67,10 +67,10 @@ Las tareas se pueden combinar o rotar según la composición real del grupo.
 
 - [x] Incorporar el **logo original** completo y legible: `public/assets/logo-a-la-orden.webp`, provisto por el grupo como S03.webp.
 - [ ] Registrar integrantes, aportes y modelo utilizado; si la aplicación no lo informa, escribir «modelo no informado».
-- [ ] Comparar las dos sentencias con la consigna y explicar cada rama de los diagramas.
-- [ ] Probar uno, varios y cero resultados; pedidos con igual fecha; error de consulta; selección inválida.
-- [ ] Abrir y cerrar todos los desplegables con clic, Enter y barra espaciadora.
-- [ ] Revisar navegación, foco visible y legibilidad de diagramas en desktop.
+- [x] Mantener las dos sentencias originales y representar sus condiciones. La explicación por todos los integrantes queda para la revisión grupal.
+- [x] Verificación técnica de uno, varios y cero resultados; fecha repetida, errores y selección inválida (esta última en pruebas del modelo).
+- [x] Verificar controles con clic y los diez desplegables con Enter y barra espaciadora.
+- [x] Revisar navegación, foco visible y diagramas en desktop; ampliar revisión a tamaños de tablet y celular.
 - [ ] Registrar revisión grupal y evidencia de iteración.
 - [ ] Publicar y comprobar repositorio y landing desde una ventana sin sesión.
 
@@ -86,6 +86,8 @@ El compañero que cree el repositorio lo conectará a Vercel. Seleccionar preset
 
 - `index.html`: contenido, diagramas y desplegables nativos.
 - `styles.css`: diseño, variantes responsivas y foco accesible.
+- `responsive.css`: adaptación de celulares y tablets, controles táctiles y diagramas completos.
+- `ENTREGA.md`: guion de explicación, matriz de casos y pasos pendientes de revisión grupal y publicación.
 - `main.js`: selección de casos ilustrativos sin acceso a servicios.
 - `package.json`: dependencia Vite y comandos de desarrollo, build y vista previa.
 - `package-lock.json`: versiones fijadas para instalaciones reproducibles con `npm ci`.
@@ -108,3 +110,15 @@ Archivos agregados: enhancements.css (temas, interacción y animación), interac
 - Navegador: selección PED-1087 y detalle correcto; cambio de escenario elimina la selección; tema claro persiste al recargar; imágenes cargadas; perfil abierto y cerrado con Enter.
 - Revisión visual en escritorio (1366 × 900) y panel angosto. Sin desbordamiento horizontal detectado en escritorio.
 - La revisión conjunta del grupo y la publicación siguen pendientes.
+
+## Iteración responsive y cierre local
+
+Pedido del grupo: adaptar a tablets y celulares y avanzar con los faltantes de entrega.
+
+Problema detectado: la elipse decorativa desbordaba en anchos pequeños y la disposición de dos columnas reducía la legibilidad del flujo en tablets verticales. Cambio: se redujo la elipse, se usa una columna para las soluciones hasta 900 px, tarjetas de perfil individuales en celular, tipografía adaptable y controles táctiles de al menos 44 px. Los estilos se cargan desde HTML para conservar la presentación aun sin JavaScript.
+
+Se añadió «Ver diagrama completo» a ambos flujos para consultar todas las ramas sin cambiar escenarios. Esto complementa la simulación paso a paso.
+
+Verificación: 320, 375, 430, 768, 820, 1024 y 1366 px sin desborde horizontal; diez desplegables probados con Enter/Espacio; selección por identificador en tablet con fechas coincidentes. Son pruebas en navegador con viewport emulado, no una certificación en dispositivos físicos.
+
+Ver [ENTREGA.md](ENTREGA.md) para el guion y los pendientes que requieren datos reales del grupo. No se atribuyen revisiones a otros integrantes sin su confirmación. No se realizaron commits ni push de esta iteración.
