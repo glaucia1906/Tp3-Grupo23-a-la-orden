@@ -22,6 +22,42 @@ img { max-width: 100%; }
 .flow-hint, .route-alternative, .step-information > p:not(.eyebrow), .step-output { font-size: 13px; }
 .profile-grid { align-items: start; }
 
+/* Esta sección siempre tiene fondo oscuro, independientemente del tema global.
+   Sus estados no deben heredar --paper/--ink, que se invierten al cambiar tema. */
+.case-buttons button {
+  min-width: 0;
+  max-width: 100%;
+  line-height: 1.5;
+  font-weight: 600;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  border-color: #92b5ab;
+  transition: background-color .18s, border-color .18s;
+}
+.case-buttons button:hover { background: #22635b; color: #ffffff; }
+.case-buttons button[aria-pressed="true"],
+.case-buttons button[aria-pressed="true"]:hover {
+  background: #e3edcf;
+  color: #123c35;
+  border-color: #e3edcf;
+  box-shadow: inset 0 0 0 1px #123c35;
+}
+.case-buttons button:focus-visible {
+  outline: 3px solid #ffca73;
+  outline-offset: 4px;
+}
+.section-head > *, .team-intro > *, .context-inner > *, .branches > * { min-width: 0; }
+.order-choice fieldset { min-width: 0; }
+.order-choice legend { max-width: 100%; white-space: normal; }
+.scenario-select { max-width: 100%; }
+.flow-heading { flex-wrap: wrap; }
+.step-node .node-kind { flex-shrink: 0; opacity: 1; }
+
+@media (hover: none) {
+  .step-node:hover, .profile-card:hover { transform: none; }
+  .case-buttons button:not([aria-pressed="true"]):hover { background: transparent; }
+}
+
 @media (max-width: 1100px) {
   .hero { gap: 30px; }
   .hero h1 { font-size: clamp(42px, 5.4vw, 64px); letter-spacing: -2px; }
@@ -101,8 +137,8 @@ img { max-width: 100%; }
   .brand-story { margin-inline: 16px; }
   .flow-controls { grid-template-columns: 1fr 1fr; }
   .step-counter { grid-column: 1 / -1; grid-row: 1; }
-  .step-node { flex-wrap: wrap; }
-  .step-node > span:nth-child(2) { flex: 1; }
-  .node-kind { flex-basis: 100%; max-width: none; margin-left: 31px; }
+  .step-node { display: grid; grid-template-columns: 23px minmax(0, 1fr); }
+  .step-node > span:nth-child(2) { min-width: 0; }
+  .node-kind { grid-column: 2; max-width: none; margin-left: 0; }
   .complete-diagram-content .branches { grid-template-columns: 1fr; }
 }

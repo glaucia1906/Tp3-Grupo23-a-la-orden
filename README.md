@@ -122,3 +122,11 @@ Se añadió «Ver diagrama completo» a ambos flujos para consultar todas las ra
 Verificación: 320, 375, 430, 768, 820, 1024 y 1366 px sin desborde horizontal; diez desplegables probados con Enter/Espacio; selección por identificador en tablet con fechas coincidentes. Son pruebas en navegador con viewport emulado, no una certificación en dispositivos físicos.
 
 Ver [ENTREGA.md](ENTREGA.md) para el guion y los pendientes que requieren datos reales del grupo. No se atribuyen revisiones a otros integrantes sin su confirmación. No se realizaron commits ni push de esta iteración.
+
+## Corrección de estilos y contraste · 19/11/2026
+
+El grupo detectó texto ilegible en los botones de escenarios al usar el tema oscuro. La sección tiene fondo verde permanente, pero sus botones heredaban variables globales invertidas por el tema. Se fijaron colores propios para estados normal, seleccionado, hover y foco, y se mejoró la legibilidad de controles deshabilitados.
+
+La revisión adicional encontró desborde interno en las etiquetas de nodos a 320–360 px. Se reemplazó esa distribución por una grilla de dos columnas y se ajustaron límites de campos, leyendas y textos largos. Los controles de escenarios conservan un mínimo de 44 px de alto.
+
+Verificación: revisión de las tres hojas de estilos; navegador en ambos temas, con desplegables abiertos; comprobación de anchos desde 320 hasta 1680 px y de límites 380/381, 650/651 y 900/901. Sin desborde horizontal ni recortes de texto en los controles medidos tras la corrección. Inspección visual en celular (360 px) y tablet (820 px). Comprobación de contraste de textos renderizados sobre fondos sólidos en ambos temas, sin fallos detectados en esa comprobación; no equivale a una auditoría integral de accesibilidad ni a pruebas en dispositivos físicos.
