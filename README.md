@@ -63,31 +63,16 @@ Las tareas se pueden combinar o rotar según la composición real del grupo.
 - Todos los archivos de esta primera versión fueron generados por el agente.
 - Iteración: a pedido del grupo se incorporó Vite para desarrollo local y generación de la versión de producción. Se conservaron los contenidos y el diseño, se convirtió la entrada JavaScript a módulo y se actualizaron las instrucciones de ejecución y publicación.
 
-
 Herramienta adicional para la revisión final:
 
 - Aplicación utilizada: Claude Code (aplicación de escritorio).
 - Modelo: Claude Opus 5.5.
 - Uso: revisión del proyecto contra la consigna y la rúbrica, y actualización de esta documentación (registro del modelo de Codex y de esta herramienta). No modificó el código de la landing.
 
-## Revisión antes de entregar
-
-- [x] Incorporar el **logo original** completo y legible: `assets/logo-a-la-orden.webp`, provisto por el grupo como S03.webp.
-- [ ] Registrar integrantes, aportes y modelo utilizado; si la aplicación no lo informa, escribir «modelo no informado».
-- [x] Mantener las dos sentencias originales y representar sus condiciones. La explicación por todos los integrantes queda para la revisión grupal.
-- [x] Verificación técnica de uno, varios y cero resultados; fecha repetida, errores y selección inválida (esta última en pruebas del modelo).
-- [x] Verificar controles con clic y los diez desplegables con Enter y barra espaciadora.
-- [x] Revisar navegación, foco visible y diagramas en desktop; ampliar revisión a tamaños de tablet y celular.
-- [ ] Registrar revisión grupal y evidencia de iteración.
-- [ ] Publicar y comprobar repositorio y landing desde una ventana sin sesión.
-
-## Publicación prevista
-
-El compañero que cree el repositorio lo conectará a Vercel. Seleccionar preset **Vite**, comando de build `npm run build` y directorio de salida `dist`. La raíz del proyecto es la carpeta que contiene `package.json`. Subir `package-lock.json` al repositorio; no subir `node_modules/` ni `dist/`. Completar los enlaces luego de publicarlo.
+## Publicación
 
 - Repositorio: https://github.com/glaucia1906/Tp3-Grupo23-a-la-orden
-- Landing: pendiente.
-- Comprobación de enlaces sin sesión: pendiente.
+- Landing: https://tp3grupo23frontend.vercel.app/
 
 ## Archivos
 
@@ -99,6 +84,8 @@ El compañero que cree el repositorio lo conectará a Vercel. Seleccionar preset
 - `package.json`: dependencia Vite y comandos de desarrollo, build y vista previa.
 - `package-lock.json`: versiones fijadas para instalaciones reproducibles con `npm ci`.
 - `.gitignore`: exclusión de dependencias, archivos generados y configuración local.
+
+## Participación de los integrantes del grupo
 
 ## Segunda iteración: identidad e interacción
 
@@ -127,8 +114,6 @@ Problema detectado: la elipse decorativa desbordaba en anchos pequeños y la dis
 Se añadió «Ver diagrama completo» a ambos flujos para consultar todas las ramas sin cambiar escenarios. Esto complementa la simulación paso a paso.
 
 Verificación: 320, 375, 430, 768, 820, 1024 y 1366 px sin desborde horizontal; diez desplegables probados con Enter/Espacio; selección por identificador en tablet con fechas coincidentes. Son pruebas en navegador con viewport emulado, no una certificación en dispositivos físicos.
-
-Ver [ENTREGA.md](ENTREGA.md) para el guion y los pendientes que requieren datos reales del grupo. No se atribuyen revisiones a otros integrantes sin su confirmación. No se realizaron commits ni push de esta iteración.
 
 ## Corrección de estilos y contraste · 19/11/2026
 
