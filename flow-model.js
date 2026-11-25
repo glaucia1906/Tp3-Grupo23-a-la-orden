@@ -4,6 +4,41 @@ export const scenarios = {
   same: 'Mismo nombre y fecha', error: 'Error de consulta'
 };
 
+export function getFlowRoutes(rule, scenario, resolved = false) {
+  const activeRoute = scenario === 'same' ? 'many' : scenario;
+  const routes = [
+    {
+      id: 'one',
+      title: 'Un pedido',
+      description: rule === 'r3'
+        ? 'Mostrar el detalle y el estado actual del único pedido encontrado.'
+        : 'Continuar en R3 para mostrar el detalle y el estado del único pedido.'
+    },
+    {
+      id: 'many',
+      title: 'Varios pedidos',
+      description: rule === 'r3'
+        ? 'Continuar en R4: la persona debe elegir un identificador antes de abrir el detalle.'
+        : 'Listar identificadores y fechas, esperar la selección, validarla y abrir únicamente el detalle elegido.'
+    },
+    {
+      id: 'none',
+      title: 'Sin resultados',
+      description: 'Pedir revisar el nombre. No se inventa un pedido.'
+    },
+    {
+      id: 'error',
+      title: 'Error de consulta',
+      description: 'Solicitar revisión humana. La cantidad de resultados es desconocida.'
+    }
+  ];
+
+  return routes.map(route => ({
+    ...route,
+    state: !resolved ? 'pending' : route.id === activeRoute ? 'active' : 'excluded'
+  }));
+}
+
 const node = (id, title, kind, explanation, output) => ({ id, title, kind, explanation, output });
 export function makeFlow(rule, scenario, selected = '') {
   const isMany = scenario === 'many' || scenario === 'same';
@@ -14,7 +49,8 @@ export function makeFlow(rule, scenario, selected = '') {
   ] : [];
   const chosen = orders.find(order => order.id === selected);
   const steps = [
-    node('start', 'Buscar por nombre', 'person', 'La persona necesita consultar un pedido e ingresa el nombre. En este ejemplo usamos Lucía Pérez.', 'Entrada: nombre = Lucía Pérez'),
+    node('context', 'Recibir la consulta del cliente', 'person', 'Lucía Pérez consulta a A la Orden por el estado de su pedido. La persona que recibe la consulta necesita ubicarlo en el registro antes de responder.', 'Consulta de Lucía Pérez: «¿En qué estado está mi pedido?»'),
+    node('start', 'Identificar a la persona', 'person', 'La persona que atiende toma el nombre de la consulta para buscar sus pedidos. En este ejemplo usamos Lucía Pérez.', 'Entrada: nombre = Lucía Pérez'),
     node('query', 'Consultar el registro', 'agent', 'El futuro agente consultaría una herramienta de registro. Pediría las coincidencias por nombre y sus datos, sin cambiar ningún estado.', 'Herramienta propuesta: registro de pedidos')
   ];
   if (scenario === 'error') {
