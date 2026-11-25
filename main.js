@@ -1,4 +1,4 @@
-import { initFlows } from './interactive-flows.js';
+import { animateContentChange, initFlows } from './interactive-flows.js';
 import { initDepthEffects } from './depth-effects.js';
 
 initFlows();
@@ -84,5 +84,6 @@ document.querySelectorAll('[data-case]').forEach(button => {
     if (button.getAttribute('aria-pressed') === 'true') return;
     document.querySelectorAll('[data-case]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
     cases[button.dataset.case].forEach((text, index) => { document.getElementById(fields[index]).textContent = text; });
+    animateContentChange(document.querySelector('.case-result'));
   });
 });

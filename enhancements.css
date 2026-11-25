@@ -79,15 +79,3 @@ details[open] .detail-body { animation:copy-arrive .3s ease both; }
   .reveal { opacity:1; transform:none; }
   .button:hover,.theme-toggle:hover,.step-node:hover,.profile-card:hover .profile-photo,.case-buttons button:hover,.flow-controls button:hover:not(:disabled) { transform:none; }
 }
-
-/* Select a case before rendering any step of the journey. */
-.flow-setup[hidden],.flow-run[hidden] { display:none!important; }
-.case-setup-form fieldset { display:grid; gap:10px; min-width:0; margin:0; padding:0; border:0; }
-.case-setup-form legend { margin-bottom:12px; font-weight:600; }
-.setup-case { display:flex; align-items:center; gap:12px; padding:12px; border-radius:12px; background:var(--surface); cursor:pointer; }
-.setup-case input { flex-shrink:0; width:18px; height:18px; accent-color:var(--primary); }
-.setup-case strong,.setup-case small { display:block; }
-.setup-case small,.setup-note,.setup-intro { color:var(--muted); }
-.setup-title { margin:0 0 12px; }
-.start-case,.settings-trigger { min-height:48px; margin-top:16px; padding:12px 18px; border:0; border-radius:12px; background:var(--primary); color:var(--paper); font:inherit; }
-.start-case:disabled { opacity:.6; }

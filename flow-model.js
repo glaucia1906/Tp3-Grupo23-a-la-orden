@@ -4,6 +4,41 @@ export const scenarios = {
   same: 'Mismo nombre y fecha', error: 'Error de consulta'
 };
 
+export function getFlowRoutes(rule, scenario, resolved = false) {
+  const activeRoute = scenario === 'same' ? 'many' : scenario;
+  const routes = [
+    {
+      id: 'one',
+      title: 'Un pedido',
+      description: rule === 'r3'
+        ? 'Mostrar el detalle y el estado actual del único pedido encontrado.'
+        : 'Continuar en R3 para mostrar el detalle y el estado del único pedido.'
+    },
+    {
+      id: 'many',
+      title: 'Varios pedidos',
+      description: rule === 'r3'
+        ? 'Continuar en R4: la persona debe elegir un identificador antes de abrir el detalle.'
+        : 'Listar identificadores y fechas, esperar la selección, validarla y abrir únicamente el detalle elegido.'
+    },
+    {
+      id: 'none',
+      title: 'Sin resultados',
+      description: 'Pedir revisar el nombre. No se inventa un pedido.'
+    },
+    {
+      id: 'error',
+      title: 'Error de consulta',
+      description: 'Solicitar revisión humana. La cantidad de resultados es desconocida.'
+    }
+  ];
+
+  return routes.map(route => ({
+    ...route,
+    state: !resolved ? 'pending' : route.id === activeRoute ? 'active' : 'excluded'
+  }));
+}
+
 const node = (id, title, kind, explanation, output) => ({ id, title, kind, explanation, output });
 export function makeFlow(rule, scenario, selected = '') {
   const isMany = scenario === 'many' || scenario === 'same';

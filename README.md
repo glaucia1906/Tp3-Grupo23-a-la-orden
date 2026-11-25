@@ -138,3 +138,7 @@ Los recorridos reciben la consulta de Lucía e identifican a la persona antes de
 ## Identidad visual y recursos
 
 La portada y las secciones usan la paleta verde de A la Orden, logo con transparencia, ilustraciones 3D y movimiento reducido. Las rutas relativas y la configuración de Vite permiten servir los recursos desde Live Server y subcarpetas.
+
+## Etapas y diagramas del caso
+
+La columna derecha presenta una etapa por vez, índice horizontal, progreso y opciones para reiniciar o elegir otro caso. Las alternativas descartadas quedan grises. El diagrama generado refleja solo el avance realizado y mantiene pendientes la validación y el detalle hasta elegir un identificador. Nueve pruebas verifican el modelo.
