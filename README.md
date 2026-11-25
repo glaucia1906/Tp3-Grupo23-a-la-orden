@@ -65,7 +65,7 @@ Las tareas se pueden combinar o rotar según la composición real del grupo.
 
 ## Revisión antes de entregar
 
-- [x] Incorporar el **logo original** completo y legible: `public/assets/logo-a-la-orden.webp`, provisto por el grupo como S03.webp.
+- [x] Incorporar el **logo original** completo y legible: `assets/logo-a-la-orden.webp`, provisto por el grupo como S03.webp.
 - [ ] Registrar integrantes, aportes y modelo utilizado; si la aplicación no lo informa, escribir «modelo no informado».
 - [x] Mantener las dos sentencias originales y representar sus condiciones. La explicación por todos los integrantes queda para la revisión grupal.
 - [x] Verificación técnica de uno, varios y cero resultados; fecha repetida, errores y selección inválida (esta última en pruebas del modelo).
@@ -101,7 +101,7 @@ Los diagramas permiten seleccionar cinco escenarios, avanzar, retroceder, reinic
 
 El tema se inicia según la preferencia guardada o del sistema y se guarda en localStorage. Si el almacenamiento está bloqueado, el cambio sigue funcionando durante la sesión. Las animaciones de entrada y de pasos respetan prefers-reduced-motion. Los perfiles conservan sus descripciones y GitHub; no se inventaron aportes al TP.
 
-Archivos agregados: enhancements.css (temas, interacción y animación), interactive-flows.js (controles), flow-model.js (reglas de simulación), public/favicon.svg y public/assets/ (logo y fotos).
+Archivos agregados: enhancements.css (temas, interacción y animación), interactive-flows.js (controles), flow-model.js (reglas de simulación), public/favicon.svg y assets/ (logo y fotos).
 
 ## Verificación de esta iteración
 
@@ -134,3 +134,7 @@ Verificación: revisión de las tres hojas de estilos; navegador en ambos temas,
 ## Contexto y selección inicial de casos
 
 Los recorridos reciben la consulta de Lucía e identifican a la persona antes de consultar el registro. Se elige un caso sin preselección y se comienza explícitamente; cambiar de caso borra la elección del pedido y vuelve al inicio.
+
+## Identidad visual y recursos
+
+La portada y las secciones usan la paleta verde de A la Orden, logo con transparencia, ilustraciones 3D y movimiento reducido. Las rutas relativas y la configuración de Vite permiten servir los recursos desde Live Server y subcarpetas.
