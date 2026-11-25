@@ -14,7 +14,8 @@ export function makeFlow(rule, scenario, selected = '') {
   ] : [];
   const chosen = orders.find(order => order.id === selected);
   const steps = [
-    node('start', 'Buscar por nombre', 'person', 'La persona necesita consultar un pedido e ingresa el nombre. En este ejemplo usamos Lucía Pérez.', 'Entrada: nombre = Lucía Pérez'),
+    node('context', 'Recibir la consulta del cliente', 'person', 'Lucía Pérez consulta a A la Orden por el estado de su pedido. La persona que recibe la consulta necesita ubicarlo en el registro antes de responder.', 'Consulta de Lucía Pérez: «¿En qué estado está mi pedido?»'),
+    node('start', 'Identificar a la persona', 'person', 'La persona que atiende toma el nombre de la consulta para buscar sus pedidos. En este ejemplo usamos Lucía Pérez.', 'Entrada: nombre = Lucía Pérez'),
     node('query', 'Consultar el registro', 'agent', 'El futuro agente consultaría una herramienta de registro. Pediría las coincidencias por nombre y sus datos, sin cambiar ningún estado.', 'Herramienta propuesta: registro de pedidos')
   ];
   if (scenario === 'error') {

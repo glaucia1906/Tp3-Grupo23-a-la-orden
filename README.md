@@ -130,3 +130,7 @@ El grupo detectó texto ilegible en los botones de escenarios al usar el tema os
 La revisión adicional encontró desborde interno en las etiquetas de nodos a 320–360 px. Se reemplazó esa distribución por una grilla de dos columnas y se ajustaron límites de campos, leyendas y textos largos. Los controles de escenarios conservan un mínimo de 44 px de alto.
 
 Verificación: revisión de las tres hojas de estilos; navegador en ambos temas, con desplegables abiertos; comprobación de anchos desde 320 hasta 1680 px y de límites 380/381, 650/651 y 900/901. Sin desborde horizontal ni recortes de texto en los controles medidos tras la corrección. Inspección visual en celular (360 px) y tablet (820 px). Comprobación de contraste de textos renderizados sobre fondos sólidos en ambos temas, sin fallos detectados en esa comprobación; no equivale a una auditoría integral de accesibilidad ni a pruebas en dispositivos físicos.
+
+## Contexto y selección inicial de casos
+
+Los recorridos reciben la consulta de Lucía e identifican a la persona antes de consultar el registro. Se elige un caso sin preselección y se comienza explícitamente; cambiar de caso borra la elección del pedido y vuelve al inicio.

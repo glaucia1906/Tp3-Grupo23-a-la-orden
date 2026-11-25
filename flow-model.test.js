@@ -1,6 +1,23 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { makeFlow } from './flow-model.js';
+import { makeFlow, scenarios } from './flow-model.js';
+
+test('Ambos flujos reciben la consulta, identifican a la persona y consultan antes de resolver cualquier escenario', () => {
+  for (const rule of ['r3', 'r4']) {
+    for (const scenario of Object.keys(scenarios)) {
+      for (const selection of ['', 'PED-1042']) {
+        const flow = makeFlow(rule, scenario, selection);
+        assert.deepEqual(flow.steps.slice(0, 3).map(step => step.id), ['context', 'start', 'query']);
+        assert.equal(flow.steps[0].kind, 'person');
+        assert.match(flow.steps[0].explanation, /Lucía Pérez.*A la Orden.*estado de su pedido/);
+        assert.match(flow.steps[1].output, /nombre = Lucía Pérez/);
+        assert.ok(flow.steps.slice(0, 3).every(step => !['decision', 'error', 'detail'].includes(step.id)));
+        assert.ok(flow.steps.slice(3).every(step => !['context', 'start', 'query'].includes(step.id)));
+        assert.equal(flow.steps[3].id, scenario === 'error' ? 'error' : 'decision');
+      }
+    }
+  }
+});
 
 test('R3 solo muestra un pedido cuando hay exactamente una coincidencia', () => {
   assert.equal(makeFlow('r3', 'one').steps.at(-1).id, 'detail');
