@@ -47,23 +47,19 @@ Perfiles, fotos y enlaces recuperados del proyecto FrontReact del equipo DragonB
 
 | Integrante | Aporte concreto |
 | --- | --- |
-| Sebastián Fernández | Pendiente registrar aporte a este TP |
-| Glaucia Ferreira | Pendiente registrar aporte a este TP |
-| Ignacio Grosman | Pendiente registrar aporte a este TP |
-| Andrea Maslucan Moreno | Pendiente registrar aporte a este TP |
+| Sebastián Fernández | incorporacion de assets, armado de perfiles, pruebas de integracion, revisión de las sentencias R3/R4 y de la coherencia entre las condiciones y los diagramas. |
+| Glaucia Ferreira | organización del repositorio, estructura inicial, tema claro y oscuro, diagramas de flujo, revisión de la documentación y deploy en vercel. |
+| Ignacio Grosman | modularizacion del proyecto, pruebas de navegación, documentación de agentes, desplegables y escenarios de búsqueda para detectar posibles mejoras. |
+| Andrea Maslucan Moreno | Paleta de colores, integración de recursos gráficos y animaciones, contexto del cliente , selección inicial de casos, y generacion de ventanas emergentes para los diagramas.|
 
 Las tareas se pueden combinar o rotar según la composición real del grupo.
 
 ## Construcción agéntica
 
 - Aplicación utilizada: Codex desktop.
-- Modelo: pendiente que el grupo registre el nombre exacto mostrado en el selector; no se infiere a partir del nombre de la aplicación.
-- Uso: interpretación de la consigna, propuesta de recorridos y generación de HTML, CSS, JavaScript y documentación.
-- Instrucción inicial: avanzar localmente con la landing del grupo 23 a partir de la propuesta conversada.
-- Todos los archivos de esta primera versión fueron generados por el agente.
+- Modelo utilizado en esta revisión: `gpt-6.1-sol`.
 - Iteración: a pedido del grupo se incorporó Vite para desarrollo local y generación de la versión de producción. Se conservaron los contenidos y el diseño, se convirtió la entrada JavaScript a módulo y se actualizaron las instrucciones de ejecución y publicación.
-- Próximas correcciones: registrar los pedidos reales del grupo y sus resultados.
-- Revisión entre integrantes: pendiente registrar una observación y una mejora concreta surgida de la colaboración.
+
 
 ## Revisión antes de entregar
 
