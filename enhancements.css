@@ -47,7 +47,7 @@ html[data-theme=dark] .node.outcome { background:#355e43; }
 .flow-controls button:hover:not(:disabled) { transform:translateY(-2px); }
 .flow-controls button:disabled { background:var(--soft); color:var(--muted); opacity:.75; }
 .step-counter { color:var(--muted); font-size:11px; text-align:center; }
-.reset-flow { display:block; min-height:44px; margin:10px auto 0; padding:7px 12px; border:0; background:transparent; color:var(--muted); font-size:12px; text-decoration:underline; text-underline-offset:4px; }
+.reset-flow { display:block; min-height:44px; margin:10px auto 0; padding:10px 16px; border:0; border-radius:12px; background:var(--surface); color:var(--ink); font-size:14px; font-weight:600; text-decoration:none; }
 .reset-flow:hover { color:var(--ink); }
 .order-choice { margin-top:20px; }
 .order-choice fieldset { min-width:0; margin:0; padding:0; border:0; }

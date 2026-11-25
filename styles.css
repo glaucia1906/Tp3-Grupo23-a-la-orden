@@ -44,7 +44,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,su
 .hero-actions { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
 .button { display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:52px; padding:14px 25px; border:0; border-radius:40px; background:var(--primary); color:#fff; font-size:14px; font-weight:600; box-shadow:0 8px 20px -12px #153e3580; transition:transform .25s,background .25s,box-shadow .25s; }
 .button:hover { background:var(--primary-hover); transform:translateY(-3px); box-shadow:0 12px 28px -14px #153e3580; }
-.hero-secondary { display:inline-flex; align-items:center; min-height:44px; font-size:14px; font-weight:500; color:var(--muted); text-decoration:underline; text-underline-offset:5px; text-decoration-color:var(--line); }
+.hero-secondary { display:inline-flex; align-items:center; min-height:44px; font-size:14px; font-weight:500; color:var(--muted); text-decoration:none; }
 .hero-secondary:hover { color:var(--ink); }
 .meta { margin:27px 0 0; color:var(--muted); font-size:10px; font-weight:500; letter-spacing:.1em; }
 .meta span { margin-inline:8px; }
@@ -151,7 +151,7 @@ details[open]>summary::after { transform:rotate(45deg); }
 .skills span { padding:3px 9px; border:0; border-radius:5px; background:var(--soft); color:var(--muted); font-size:11px; }
 .profile-body details p { color:var(--muted); font-size:14px; }
 .profile-body summary { font-size:13px; }
-.profile-body>a { display:inline-flex; align-items:center; gap:8px; min-height:44px; margin-top:6px; color:var(--ink); font-size:13px; font-weight:600; text-decoration:underline; text-underline-offset:5px; text-decoration-color:var(--line); }
+.profile-body>a { display:inline-flex; align-items:center; gap:8px; min-height:44px; margin-top:6px; color:var(--ink); font-size:13px; font-weight:600; text-decoration:none; }
 .team-note { margin:40px 0 0; color:var(--muted); font-size:12px; }
 .footer { display:flex; justify-content:space-between; align-items:center; gap:24px; padding-block:25px 35px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
 .footer a { display:inline-flex; align-items:center; min-height:44px; }
