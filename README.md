@@ -55,7 +55,7 @@ Las tareas se pueden combinar o rotar según la composición real del grupo.
 ## Construcción agéntica
 
 - Aplicación utilizada: Codex desktop.
-- Modelo: pendiente que el grupo registre el nombre exacto mostrado en el selector; no se infiere a partir del nombre de la aplicación.
+- Modelo: gpt-6 Astra.
 - Uso: interpretación de la consigna, propuesta de recorridos y generación de HTML, CSS, JavaScript y documentación.
 - Instrucción inicial: avanzar localmente con la landing del grupo 23 a partir de la propuesta conversada.
 - Todos los archivos de esta primera versión fueron generados por el agente.
@@ -63,14 +63,21 @@ Las tareas se pueden combinar o rotar según la composición real del grupo.
 - Próximas correcciones: registrar los pedidos reales del grupo y sus resultados.
 - Revisión entre integrantes: pendiente registrar una observación y una mejora concreta surgida de la colaboración.
 
+Herramienta adicional para la revisión final:
+
+- Aplicación utilizada: Claude Code (aplicación de escritorio).
+- Modelo: Claude Opus 5.5.
+- Uso: revisión del proyecto contra la consigna y la rúbrica, y actualización de esta documentación (registro del modelo de Codex y de esta herramienta). No modificó el código de la landing.
+
 ## Revisión antes de entregar
 
 - [x] Incorporar el **logo original** completo y legible: `public/assets/logo-a-la-orden.webp`, provisto por el grupo como S03.webp.
-- [ ] Registrar integrantes, aportes y modelo utilizado; si la aplicación no lo informa, escribir «modelo no informado».
-- [ ] Comparar las dos sentencias con la consigna y explicar cada rama de los diagramas.
-- [ ] Probar uno, varios y cero resultados; pedidos con igual fecha; error de consulta; selección inválida.
-- [ ] Abrir y cerrar todos los desplegables con clic, Enter y barra espaciadora.
-- [ ] Revisar navegación, foco visible y legibilidad de diagramas en desktop.
+- [x] Registrar el modelo utilizado: gpt-6 Astra en Codex desktop.
+- [ ] Registrar el aporte concreto de cada integrante.
+- [x] Mantener las dos sentencias originales y representar sus condiciones. La explicación por todos los integrantes queda para la revisión grupal.
+- [x] Verificación técnica de uno, varios y cero resultados; fecha repetida, errores y selección inválida (esta última en pruebas del modelo).
+- [x] Verificar controles con clic y los diez desplegables con Enter y barra espaciadora.
+- [x] Revisar navegación, foco visible y diagramas en desktop; ampliar revisión a tamaños de tablet y celular.
 - [ ] Registrar revisión grupal y evidencia de iteración.
 - [ ] Publicar y comprobar repositorio y landing desde una ventana sin sesión.
 
