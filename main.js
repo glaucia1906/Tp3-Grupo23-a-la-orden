@@ -22,7 +22,7 @@ syncTheme();
 
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 if ('IntersectionObserver' in window && !reducedMotion.matches) {
-  const revealElements = [...document.querySelectorAll('.solution, .profile-card, .section-head, .brand-story')];
+  const revealElements = [...document.querySelectorAll('.solution, .profile-card, .section-head, .brand-story, .journey-intro, .journey-map-heading, .journey-reading')];
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); }
@@ -40,6 +40,38 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
       observer.disconnect();
     }
   });
+}
+
+// Animate each map piece when it becomes visible, including the stacked mobile layout.
+const conceptMapItems = [...document.querySelectorAll('.journey-map .concept-node, .journey-map .concept-route')];
+if ('IntersectionObserver' in window && conceptMapItems.length) {
+  const wideMap = matchMedia('(min-width: 901px)');
+  const mapObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting || reducedMotion.matches) return;
+      const element = entry.target;
+      const index = element.matches('.concept-node') && wideMap.matches
+        ? [...element.parentElement.children].indexOf(element)
+        : 0;
+      element.style.setProperty('--map-delay', `${index * 120}ms`);
+      element.classList.add('is-map-visible');
+      element.closest('.concept-routes')?.classList.add('is-map-visible');
+      mapObserver.unobserve(element);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
+
+  function syncConceptMapMotion() {
+    mapObserver.disconnect();
+    conceptMapItems.forEach(element => {
+      element.classList.remove('is-map-visible');
+      element.style.removeProperty('--map-delay');
+    });
+    document.querySelectorAll('.journey-map .concept-routes').forEach(group => group.classList.remove('is-map-visible'));
+    if (!reducedMotion.matches) conceptMapItems.forEach(element => mapObserver.observe(element));
+  }
+
+  reducedMotion.addEventListener('change', syncConceptMapMotion);
+  syncConceptMapMotion();
 }
 
 const navItems = [...document.querySelectorAll('.header nav a[href^="#"]')]

@@ -142,3 +142,11 @@ La portada y las secciones usan la paleta verde de A la Orden, logo con transpar
 ## Etapas y diagramas del caso
 
 La columna derecha presenta una etapa por vez, índice horizontal, progreso y opciones para reiniciar o elegir otro caso. Las alternativas descartadas quedan grises. El diagrama generado refleja solo el avance realizado y mantiene pendientes la validación y el detalle hasta elegir un identificador. Nueve pruebas verifican el modelo.
+
+## Red conceptual antes de los recorridos
+
+«Del nombre al pedido» incorpora una introducción al contexto y una red conceptual que conecta la consulta de la persona, la búsqueda por nombre y la cantidad de coincidencias. Desde allí se distinguen la búsqueda directa (R3), la elección guiada (R4) y la alternativa sin resultados. La falla del registro se explica junto a la consulta, con cantidad desconocida, separada de cero coincidencias.
+
+El mapa permite ir a cada recorrido o a los casos de revisión. Explica la elección humana por identificador, el papel auxiliar de la fecha y las decisiones adicionales del grupo. Conserva el carácter conceptual y los datos ficticios de la propuesta. La presentación mantiene la paleta verde y el relieve, se adapta a pantallas pequeñas y reutiliza la animación de entrada con respeto por la preferencia de movimiento reducido.
+
+Verificación: enlaces internos e identificadores revisados, sintaxis JavaScript correcta, nueve pruebas del modelo aprobadas y compilación de producción correcta. Los conectores y la cascada responsive se revisaron en el código; la inspección visual en navegador sigue pendiente por el permiso de Computer Use.

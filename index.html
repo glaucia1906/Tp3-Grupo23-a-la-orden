@@ -31,8 +31,88 @@
     </section>
     <section class="wrap brand-story" aria-labelledby="brand-title"><img class="brand-logo" src="./assets/logo-a-la-orden-transparente.png" width="1254" height="1254" alt="Logo de A la Orden: Tus pedidos, siempre en orden"><div><p class="eyebrow">LA STARTUP QUE NOS INSPIRA</p><h2 id="brand-title">Tus pedidos, siempre en orden.</h2><p>A la Orden organiza los pedidos de pequeños emprendimientos de comida y repostería. Nuestra propuesta se enfoca en una necesidad concreta: encontrar el pedido correcto, incluso cuando varios comparten el mismo nombre.</p><p class="brand-credit">Identidad original de la startup · Creada por estudiantes del IFTS 16</p></div></section>
     <div class="context-band"><div class="wrap context-inner"><p><strong>Una búsqueda. Dos situaciones.</strong><br>La cantidad de coincidencias define el siguiente paso.</p><p>Propuesta conceptual de flujos agénticos.<br>Los procesos se explican; no se ejecutan ni consultan servicios reales.</p></div></div>
-    <section class="wrap solutions" id="propuestas">
+    <div class="proposal-sections" id="propuestas">
+    <section class="journey-section" aria-labelledby="solutions-title">
+      <div class="wrap journey-section-inner">
       <div class="section-head"><div><p class="eyebrow">DEL NOMBRE AL PEDIDO</p><h2 id="solutions-title">Dos caminos hacia<br>una respuesta clara.</h2></div><p>Un futuro agente consultaría el registro de pedidos. Si hay ambigüedad, la decisión vuelve a la persona.</p></div>
+      <div class="journey-overview">
+        <div class="journey-intro">
+          <h3>Un nombre inicia la consulta.<br>Los resultados marcan el camino.</h3>
+          <div>
+            <p>Todo empieza con una pregunta: “¿Cómo está mi pedido?”. La persona que atiende toma el nombre del cliente y un futuro agente lo usaría para consultar el registro.</p>
+            <p>Con una sola coincidencia, la <strong>búsqueda directa (R3)</strong> permite consultar el detalle. Con varias, la <strong>elección guiada (R4)</strong> necesita que la persona identifique el pedido correcto. Este mapa conecta ambas propuestas y sus alternativas.</p>
+          </div>
+        </div>
+        <figure class="journey-map" aria-labelledby="concept-map-title" aria-describedby="concept-map-caption">
+          <div class="journey-map-heading">
+            <p class="eyebrow">CÓMO SE CONECTA TODO</p>
+            <h3 id="concept-map-title">De la consulta a una respuesta.</h3>
+          </div>
+          <ol class="concept-trunk">
+            <li class="concept-node concept-node--person">
+              <span class="concept-kind">Persona</span>
+              <h4>Consulta por su pedido</h4>
+              <p>Quien atiende recibe la pregunta y toma el nombre para iniciar la búsqueda.</p>
+              <span class="concept-example">Nombre de ejemplo: Lucía Pérez</span>
+            </li>
+            <li class="concept-node concept-node--lookup">
+              <span class="concept-kind">Agente + herramienta futura</span>
+              <h4>Consulta el registro</h4>
+              <p>Busca por nombre y recupera las coincidencias.</p>
+              <aside class="concept-failure">
+                <strong>Si la consulta falla</strong>
+                <p>Se informa y se pide revisión humana. La cantidad de coincidencias es desconocida.</p>
+              </aside>
+            </li>
+            <li class="concept-node concept-node--decision">
+              <span class="concept-kind">Si la consulta responde</span>
+              <h4>¿Cuántas coincidencias hay?</h4>
+              <p>La cantidad define el siguiente paso: una, varias o ninguna.</p>
+            </li>
+          </ol>
+          <div class="concept-routes">
+            <section class="concept-route concept-route--direct" aria-labelledby="concept-direct-title">
+              <p class="concept-condition">Una coincidencia <span>R3</span></p>
+              <h4 id="concept-direct-title">Búsqueda directa</h4>
+              <ol class="concept-sequence">
+                <li>Se identifica el único pedido encontrado.</li>
+                <li>Se muestra su detalle y estado actual.</li>
+              </ol>
+              <a class="concept-link" href="#solucion-r3">Explorar búsqueda directa</a>
+            </section>
+            <section class="concept-route concept-route--choice" aria-labelledby="concept-choice-title">
+              <p class="concept-condition">Varias coincidencias <span>R4</span></p>
+              <h4 id="concept-choice-title">Elección guiada</h4>
+              <ol class="concept-sequence">
+                <li>Se listan los identificadores y las fechas.</li>
+                <li>La persona elige un identificador único.</li>
+                <li>Se valida la elección y se abre ese detalle. Si no es válida, se pide elegir de nuevo.</li>
+              </ol>
+              <a class="concept-link" href="#solucion-r4">Explorar elección guiada</a>
+            </section>
+            <section class="concept-route concept-route--empty" aria-labelledby="concept-empty-title">
+              <p class="concept-condition">Sin coincidencias</p>
+              <h4 id="concept-empty-title">Revisar el nombre</h4>
+              <p>Se informa que no hay resultados y se pide revisar el nombre, sin inventar un pedido.</p>
+              <a class="concept-link" href="#casos">Revisar los casos</a>
+            </section>
+          </div>
+          <figcaption id="concept-map-caption">
+            <strong>El identificador distingue cada pedido; la fecha ayuda a reconocerlo.</strong>
+            <span>Consultar no cambia el estado. Las alternativas sin resultados, la validación y la revisión por errores son decisiones de diseño del grupo. Esta es una propuesta conceptual con datos de ejemplo.</span>
+          </figcaption>
+        </figure>
+        <div class="journey-reading">
+          <div>
+            <h3>Primero explorá. Después compará.</h3>
+            <p>En los dos recorridos elegís un caso antes de avanzar paso a paso. En “Casos de revisión” comparás las respuestas esperadas ante situaciones como pedidos con el mismo nombre y fecha, una búsqueda sin resultados o un error de consulta.</p>
+          </div>
+          <a class="concept-link" href="#casos">Ir a casos de revisión</a>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section class="wrap solutions solution-journeys" aria-label="Recorridos de búsqueda de pedidos">
       <article class="solution" id="solucion-r3"><div class="solution-copy"><p class="eyebrow">BÚSQUEDA DIRECTA <span class="rule-reference">Referencia R3</span></p><h3>Encontrá tu pedido <br>al instante.</h3><p>Cuando hay un único resultado, el agente recuperaría su detalle y su estado actual. Una consulta directa para saber cómo está ese pedido.</p><blockquote><span>SENTENCIA ORIGINAL</span>Si la búsqueda por nombre encuentra un único pedido, el sistema muestra su detalle y su estado actual.</blockquote><details><summary>Datos, herramienta y resultado</summary><div class="detail-body"><p><strong>Entrada:</strong> nombre a buscar.</p><p><strong>Herramienta futura:</strong> consulta del registro de pedidos, con identificador, nombre, fecha, detalle y estado.</p><p><strong>Decisión:</strong> comprobar si hay exactamente una coincidencia.</p><p><strong>Salida:</strong> detalle y estado actual del único pedido registrado. La consulta no cambia su estado.</p></div></details><details><summary>Excepciones y decisiones del grupo</summary><div class="detail-body"><p>La regla define el caso de una coincidencia. Proponemos derivar a R4 si hay varias y pedir revisar el nombre si no hay ninguna.</p><p>Si falla la herramienta o falta el estado, el agente informaría el problema y solicitaría revisión a la persona responsable. No inventaría información.</p><p>Estas alternativas son decisiones de diseño del grupo.</p></div></details></div><div class="flow-panel"><p class="flow-label">UN SOLO PEDIDO · RECORRIDO PROPUESTO</p>
 <ol class="flow"><li class="node start">Lucía consulta a A la Orden por el estado de su pedido</li><li class="node human">Quien la atiende toma su nombre: Lucía Pérez</li><li class="node">Agente consulta el registro de pedidos</li><li class="node decision" data-requires-results>¿Hay exactamente una coincidencia?</li></ol>
 <div class="branches">
@@ -57,6 +137,7 @@
 <div class="offramp" data-route="error"><small class="diagram-route-state">Por evaluar</small><strong>Error de consulta</strong><p>Informar y solicitar revisión humana. No se interpreta el error como cero resultados.</p></div>
 <p class="flow-caption">* Decisión del grupo. Sin selección, se espera a la persona. La fecha es auxiliar; el identificador distingue cada pedido.</p></div></article>
     </section>
+    </div>
     <section class="cases-section" id="casos"><div class="wrap"><div class="section-head"><div><p class="eyebrow">RECORRAMOS LA PROPUESTA</p><h2>¿Qué pasaría si…?</h2></div><p>Casos ilustrativos para revisar la lógica. Elegí una situación y compará la respuesta esperada.</p></div><div class="case-buttons" role="group" aria-label="Elegir un caso ilustrativo"><button type="button" aria-pressed="true" data-case="one">Un pedido</button><button type="button" aria-pressed="false" data-case="many">Varios pedidos</button><button type="button" aria-pressed="false" data-case="none">Sin resultados</button><button type="button" aria-pressed="false" data-case="same">Misma fecha</button><button type="button" aria-pressed="false" data-case="error">Error de consulta</button></div><div class="case-result" aria-live="polite" aria-atomic="true"><span id="case-tag" class="eyebrow">APLICA R3</span><h3 id="case-title">Lucía tiene un único pedido registrado.</h3><p id="case-description">La búsqueda devuelve PED-1042. El agente mostraría su detalle y su estado actual, sin pedir elegir entre resultados.</p><p id="case-rule" class="case-rule">La condición de R3 se cumple; la de R4 no.</p></div><noscript><p>Sin JavaScript podés consultar ambos diagramas y todos los desplegables. Los botones de casos requieren JavaScript.</p></noscript></div></section>
     <section class="wrap team" id="equipo"><div class="team-intro"><div><p class="eyebrow">DRAGONBYTE · GRUPO 23</p><h2>Cuatro miradas.<br>Una propuesta en común.</h2></div><p>Estudiantes del IFTS 29. Retomamos la identidad de A la Orden, creada en el IFTS 16, para diseñar dos recorridos claros y explicar cada decisión.</p></div><div class="profile-grid"><article class="profile-card"><img class="profile-photo" src="./assets/equipo/sebastian-fernandez.png" alt="Sebastián Fernández" width="400" height="400" loading="lazy"><div class="profile-body"><p class="eyebrow">Full Stack · GRUPO 23</p><h3>Sebastián<br>Fernández</h3><div class="skills"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><details><summary>Conocé su perfil</summary><p>Desarrollador de software con 4 años de experiencia en la industria, actualmente trabajando con PHP, SQL y JavaScript sobre un sistema de certificación laboral. Estudio la Tecnicatura Superior en Desarrollo de Software en el IFTS N°29 y me interesa entender el proyecto completo: no solo el código, sino también los servidores, la seguridad y los costos que lo sostienen. Al equipo aporto experiencia real trabajando con Git, APIs REST y trabajo en equipo.</p></details><a href="https://github.com/Fernandez-Sebastian" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Sebastián Fernández (abre otra pestaña)">GitHub ↗</a></div></article>
 <article class="profile-card"><img class="profile-photo" src="./assets/equipo/glaucia-ferreira.jpeg" alt="Glaucia Ferreira" width="400" height="400" loading="lazy"><div class="profile-body"><p class="eyebrow">Full Stack · GRUPO 23</p><h3>Glaucia<br>Ferreira</h3><div class="skills"><span>C#</span><span>.NET</span><span>SQL Server</span></div><details><summary>Conocé su perfil</summary><p>Soy desarrolladora de software especializada principalmente en backend, con experiencia en C#, .NET, SQL Server y Delphi. Actualmente curso la Tecnicatura Superior en Desarrollo de Software para continuar ampliando mi formación.</p><p>Me interesan especialmente el desarrollo backend, las bases de datos, la arquitectura de software y la aplicación de inteligencia artificial al desarrollo. Me gusta analizar problemas, encontrar soluciones y trabajar en equipo, combinando experiencia técnica con aprendizaje continuo.</p></details><a href="https://github.com/glaucia1906" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Glaucia Ferreira (abre otra pestaña)">GitHub ↗</a></div></article>
