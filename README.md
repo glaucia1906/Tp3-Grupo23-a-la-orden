@@ -4,6 +4,33 @@ TP3 «Dos sentencias, dos soluciones» · IFTS 29 · Front End · 2026.
 
 Landing conceptual para A la Orden, startup creada por estudiantes del IFTS 16 que organiza pedidos de pequeños emprendimientos de comida y repostería.
 
+## Índice
+
+- [Asignación](#asignación)
+- [Ejecutar localmente](#ejecutar-localmente)
+- [Alcance y decisiones](#alcance-y-decisiones)
+- [Integrantes y aportes](#integrantes-y-aportes)
+- [Revisión entre integrantes](#revisión-entre-integrantes)
+- [Construcción agéntica](#construcción-agéntica)
+  - [Ejemplo de iteración](#ejemplo-de-iteración)
+- [Publicación](#publicación)
+  - [Comprobación de la entrega · 25/11/2026](#comprobación-de-la-entrega--25112026)
+- [Archivos](#archivos)
+- [Segunda iteración: identidad e interacción](#segunda-iteración-identidad-e-interacción)
+- [Verificación de esta iteración](#verificación-de-esta-iteración)
+- [Iteración responsive y cierre local](#iteración-responsive-y-cierre-local)
+- [Corrección de estilos y contraste · 19/11/2026](#corrección-de-estilos-y-contraste--19112026)
+- [Rediseño visual · 24/11/2026](#rediseño-visual--24112026)
+- [Flujos ilustrados y color · 24/11/2026](#flujos-ilustrados-y-color--24112026)
+- [Corrección de imágenes en Live Server · 24/11/2026](#corrección-de-imágenes-en-live-server--24112026)
+- [Estética 3D y colores vivos](#estética-3d-y-colores-vivos)
+- [Logo transparente y portada con identidad de marca · 25/11/2026](#logo-transparente-y-portada-con-identidad-de-marca--25112026)
+- [Paleta verde en toda la web](#paleta-verde-en-toda-la-web)
+- [Recorridos verticales y alternativas visibles](#recorridos-verticales-y-alternativas-visibles)
+- [Inicio contextual de las consultas](#inicio-contextual-de-las-consultas)
+- [Recorridos por etapas en la columna derecha](#recorridos-por-etapas-en-la-columna-derecha)
+- [Red conceptual antes de los recorridos](#red-conceptual-antes-de-los-recorridos)
+
 ## Asignación
 
 **S03-B · Búsqueda.**
@@ -43,7 +70,7 @@ R3 muestra detalle y estado si existe exactamente un resultado. R4 exige selecci
 
 ## Integrantes y aportes
 
-Perfiles, fotos y enlaces recuperados del proyecto FrontReact del equipo DragonByte. Los aportes específicos de este TP deben registrarse cuando se realicen; los roles profesionales de las tarjetas no representan tareas asignadas para esta entrega.
+Perfiles, fotos y enlaces recuperados del proyecto FrontReact del equipo DragonByte. La tabla reúne los aportes específicos de este TP. Las tarjetas de la landing muestran los perfiles profesionales.
 
 | Integrante | Aporte concreto |
 | --- | --- |
@@ -52,7 +79,9 @@ Perfiles, fotos y enlaces recuperados del proyecto FrontReact del equipo DragonB
 | Ignacio Grosman | modularizacion del proyecto, pruebas de navegación, documentación de agentes, desplegables y escenarios de búsqueda para detectar posibles mejoras. |
 | Andrea Maslucan Moreno | Paleta de colores, integración de recursos gráficos y animaciones, contexto del cliente , selección inicial de casos, y generacion de ventanas emergentes para los diagramas.|
 
-Las tareas se pueden combinar o rotar según la composición real del grupo.
+## Revisión entre integrantes
+
+Durante la revisión del grupo se detectó que los botones de escenarios eran difíciles de leer en modo oscuro. El grupo pidió corregir el contraste y el agente ajustó los colores de los estados normal, seleccionado, al pasar el puntero y al recibir el foco. Después se volvieron a probar los controles en ambos temas. El registro de la corrección está en [Corrección de estilos y contraste](#corrección-de-estilos-y-contraste--19112026).
 
 ## Construcción agéntica
 
@@ -69,23 +98,36 @@ Herramienta adicional para la revisión final:
 - Modelo: Claude Opus 5.5.
 - Uso: revisión del proyecto contra la consigna y la rúbrica, y actualización de esta documentación (registro del modelo de Codex y de esta herramienta). No modificó el código de la landing.
 
+- Herramienta de imágenes: ImageGen integrado. Modelo específico: no informado.
+- Uso: generación de ilustraciones y edición de variantes de imagen. Los encargos y resultados están en [ilustraciones de los flujos](assets/flujos/README.md) y [variantes de identidad](assets/VARIANTES-IDENTIDAD.md).
+
+### Ejemplo de iteración
+
+El encargo inicial a Codex fue construir la landing del Grupo 23 a partir de las propuestas R3 y R4. Durante la revisión, el grupo detectó que los botones de escenarios perdían legibilidad en modo oscuro y pidió ajustar el contraste. El agente definió colores propios para los estados de esos botones porque la sección tenía fondo verde fijo y sus controles heredaban colores globales que cambiaban con el tema. Se repasaron los estados de los controles en ambos temas.
+
 ## Publicación
 
 - Repositorio: https://github.com/glaucia1906/Tp3-Grupo23-a-la-orden
 - Landing: https://tp3grupo23frontend.vercel.app/
+
+### Comprobación de la entrega · 25/11/2026
+
+- GitHub identifica el repositorio como público. El enlace del README abre la landing del Grupo 23 en Vercel sin pedir inicio de sesión.
+- En escritorio se abrió un desplegable de cada propuesta con clic y se cerró con Enter. También se abrieron los dos diagramas desde los simuladores.
+- R3, con una coincidencia: el simulador mostró el detalle de PED-1042 y el estado «Confirmado».
+- R4, con el mismo nombre y fecha: el avance quedó bloqueado hasta elegir un identificador. Al seleccionar PED-1087 y avanzar se mostró su detalle con estado «Pendiente».
+- Pruebas locales: `npm test` ejecuta las mismas pruebas del modelo que se verificaron con `node --test flow-model.test.js` (9 de 9 aprobadas).
+- Logo: la sección «LA STARTUP QUE NOS INSPIRA» muestra el original `assets/logo-a-la-orden.webp` en la versión local.
 
 ## Archivos
 
 - `index.html`: contenido, diagramas y desplegables nativos.
 - `styles.css`: diseño, variantes responsivas y foco accesible.
 - `responsive.css`: adaptación de celulares y tablets, controles táctiles y diagramas completos.
-- `ENTREGA.md`: guion de explicación, matriz de casos y pasos pendientes de revisión grupal y publicación.
 - `main.js`: selección de casos ilustrativos sin acceso a servicios.
 - `package.json`: dependencia Vite y comandos de desarrollo, build y vista previa.
 - `package-lock.json`: versiones fijadas para instalaciones reproducibles con `npm ci`.
 - `.gitignore`: exclusión de dependencias, archivos generados y configuración local.
-
-## Participación de los integrantes del grupo
 
 ## Segunda iteración: identidad e interacción
 
@@ -103,7 +145,7 @@ Archivos agregados: enhancements.css (temas, interacción y animación), interac
 - `npm run build`: compilación de producción aprobada.
 - Navegador: selección PED-1087 y detalle correcto; cambio de escenario elimina la selección; tema claro persiste al recargar; imágenes cargadas; perfil abierto y cerrado con Enter.
 - Revisión visual en escritorio (1366 × 900) y panel angosto. Sin desbordamiento horizontal detectado en escritorio.
-- La revisión conjunta del grupo y la publicación siguen pendientes.
+- La comprobación de la publicación se registra en [Comprobación de la entrega](#comprobación-de-la-entrega--25112026).
 
 ## Iteración responsive y cierre local
 
